@@ -1,0 +1,42 @@
+Microsoft Windows [Version 10.0.26100.4061]
+(c) Microsoft Corporation. Tüm hakları saklıdır.
+
+C:\Users\CASPER>wsl
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER# cd /mnt/c/Users/CASPER/Desktop/vtys_lab6/nosql-lab-node
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER/Desktop/vtys_lab6/nosql-lab-node# # Redis endpoint
+time bash -c '
+for i in {1..100}; do
+  curl -s -H "Accept: application/json" \
+    http://localhost:8080/nosql-lab-rd/student_no=2025000001 \
+    >/dev/null
+done
+'
+
+real    0m0.603s
+user    0m0.220s
+sys     0m0.229s
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER/Desktop/vtys_lab6/nosql-lab-node# # MongoDB endpoint
+time bash -c '
+for i in {1..100}; do
+  curl -s -H "Accept: application/json" \
+    http://localhost:8080/nosql-lab-mon/student_no=2025000001 \
+    >/dev/null
+done
+'
+
+real    0m1.071s
+user    0m0.245s
+sys     0m0.230s
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER/Desktop/vtys_lab6/nosql-lab-node# # Hazelcast endpoint
+time bash -c '
+for i in {1..100}; do
+  curl -s -H "Accept: application/json" \
+    http://localhost:8080/nosql-lab-hz/student_no=2025000001 \
+    >/dev/null
+done
+'
+
+real    0m0.624s
+user    0m0.268s
+sys     0m0.194s
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER/Desktop/vtys_lab6/nosql-lab-node#
