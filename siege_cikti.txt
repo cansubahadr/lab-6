@@ -1,0 +1,59 @@
+Microsoft Windows [Version 10.0.26100.4061]
+(c) Microsoft Corporation. Tüm hakları saklıdır.
+
+C:\Users\CASPER>WSL
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER# # Redis testi
+siege -v -H "Accept: application/json" -c10 -r100 http://localhost:8080/nosql-lab-rd/student_no=2025000001 \
+  > ~/redis-siege.txt
+
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER# cat ~/redis-siege.txt
+{       "transactions":                         1000,
+        "availability":                       100.00,
+        "elapsed_time":                         0.39,
+        "data_transferred":                     0.02,
+        "response_time":                        0.00,
+        "transaction_rate":                  2564.10,
+        "throughput":                           0.05,
+        "concurrency":                          9.72,
+        "successful_transactions":                 0,
+        "failed_transactions":                     0,
+        "longest_transaction":                  0.02,
+        "shortest_transaction":                 0.00
+}
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER# # MongoDB testi
+siege -v -H "Accept: application/json" -c10 -r100 http://localhost:8080/nosql-lab-mon/student_no=2025000001 \
+  > ~/mongo-siege.txt
+
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER# cat ~/mongo-siege.txt
+{       "transactions":                         1000,
+        "availability":                       100.00,
+        "elapsed_time":                         1.55,
+        "data_transferred":                     0.02,
+        "response_time":                        0.02,
+        "transaction_rate":                   645.16,
+        "throughput":                           0.01,
+        "concurrency":                          9.82,
+        "successful_transactions":                 0,
+        "failed_transactions":                     0,
+        "longest_transaction":                  0.05,
+        "shortest_transaction":                 0.00
+}
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER# # Hazelcast testi
+siege -v -H "Accept: application/json" -c10 -r100 http://localhost:8080/nosql-lab-hz/student_no=2025000001 \
+  > ~/hz-siege.txt
+
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER# cat ~/hz-siege.txt
+{       "transactions":                         1000,
+        "availability":                       100.00,
+        "elapsed_time":                         0.53,
+        "data_transferred":                     0.02,
+        "response_time":                        0.01,
+        "transaction_rate":                  1886.79,
+        "throughput":                           0.04,
+        "concurrency":                          9.74,
+        "successful_transactions":                 0,
+        "failed_transactions":                     0,
+        "longest_transaction":                  0.02,
+        "shortest_transaction":                 0.00
+}
+root@DESKTOP-BQJTDM1:/mnt/c/Users/CASPER#
