@@ -1,0 +1,44 @@
+# Environment files
+.env
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Backup and swap files
+*~
+*.swp
+*.bak
+
+# IDE and editor settings
+## IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+## VS Code
+.vscode/
+
+## Eclipse
+.project
+.classpath
+.settings/
+
+## NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Maven output
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Dependency caches
+.mvn/
